@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="css/default.css" />
+		<link rel="stylesheet" href="css/jquery.gridster.css" />
+
+		<link href='https://fonts.googleapis.com/css?family=Ropa+Sans' rel='stylesheet' type='text/css'>
+
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/script.js"></script>
+		<!--<script type="text/javascript" src="js/jquery.gridster.min.js"></script>-->
+		<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+
+		
+		<title>Urban Definer</title>
+	</head>
+
+	<body>
+
+		<header>
+			<div class="wrap">
+				<h1>Urban Definer</h1>
+				<div class="game-tools">
+					<div id="new-game">
+						<img src="images/new-game.svg" alt="New Game">
+					</div>
+					<div id="help">
+						<img src="images/help-mark.svg" alt="Help">
+					</div>
+				</div>
+			</div>
+		</header>
+
+		<div class="grid">
+			<div id="terms-container">
+				<div data-row="1" class="row">
+					<div class="term"></div>
+					<div class="snap-to"></div>
+				</div>
+				<div data-row="2" class="row">
+					<div class="term"></div>
+					<div class="snap-to"></div>
+				</div>
+				<div data-row="3" class="row">
+					<div class="term"></div>
+					<div class="snap-to"></div>
+				</div>
+				<div data-row="4" class="row">
+					<div class="term"></div>
+					<div class="snap-to"></div>
+				</div>	 
+			</div>
+			<div id="defs-container">
+					<div class="answer-row">
+						<div id="alfa"></div>
+					</div>
+					<div class="answer-row">
+						<div id="bravo"></div>
+					</div>
+					<div class="answer-row">
+						<div id="charlie"></div>
+					</div>
+					<div class="answer-row">
+						<div id="delta"></div>
+					</div>
+			</div>
+		</div>
+
+		<div id="score">
+			<span id="current-score" class="number">0</span>
+			<span>out of</span>
+			<span id="out-of-total" class="number">0</span>
+		</div>
+
+		<div id="next-check">
+			<p id="check">Check</p>
+			<p id="next">Next</p>
+		</div>
+
+		<div id="info-overlay">
+			<div class="exit">X</div>
+			<div class="container">
+				<h2>Info</h2>
+				<p>A game by <a href="http://manskedesign.com">Nathan L. Manske</a></p>
+			</div>
+		</div>
+
+	</body>
+
+</html>
