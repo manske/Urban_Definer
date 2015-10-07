@@ -263,6 +263,7 @@ $(function(){
 					 	 		if (e.data("num") == $(this).data("num")) {
 					 	 			var move_me = $(this).offset().top - el.offset().top;
 					 	 			move_me = "+=" + move_me;
+					 	 			console.log(move_me);
 					 	 			el.animate({
 									    top: move_me
 									  }, 1000);
