@@ -260,10 +260,10 @@ $(function(){
 					 	 	$(this).css({"background-color" : "rgba(153, 0, 0, .5)"});
 					 	 	var el = $(this);
 					 	 	$(".term").each(function() {
-					 	 		if (e.data("num") == $(this).data("num")) {
+					 	 		if (el.data("num") == $(this).data("num")) {
 					 	 			var move_me = $(this).offset().top - el.offset().top;
-					 	 			console.log(".term : " + $(this).offset().top);
-					 	 			console.log(".datarow : " + el.offset().top);
+					 	 			console.log(".term : " + $(this).offset().top + " " + $(this));
+					 	 			console.log(".answer : " + el.offset().top  + " " + el);
 					 	 			move_me =  parseInt(el.css('top')) + move_me + "px";
 					 	 			console.log(move_me);
 					 	 			el.animate({
