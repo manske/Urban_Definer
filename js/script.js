@@ -262,7 +262,7 @@ $(function(){
 					 	 	$(".term").each(function() {
 					 	 		if (e.data("num") == $(this).data("num")) {
 					 	 			var move_me = $(this).offset().top - el.offset().top;
-					 	 			move_me = "+=" + move_me;
+					 	 			move_me =  parseInt(el.css('top')) + move_me + "px";
 					 	 			console.log(move_me);
 					 	 			el.animate({
 									    top: move_me
