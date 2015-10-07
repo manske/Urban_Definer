@@ -258,12 +258,16 @@ $(function(){
 					 		$(this).css({"background-color" : "rgba(0, 102, 0, .5)"})
 					 	} else {
 					 	 	$(this).css({"background-color" : "rgba(153, 0, 0, .5)"});
-					 	 	var num = $(this).data("num");
-					 	 	var el = $('.answer-row[data-num=\"'+ num +'\"]');
-					 	 	$(this).animate({
-							    left: el.offset().left + "px",
-							    top: el.offset().top + "px"
-							  }, 1000);
+					 	 	var el = $(this);
+					 	 	$(".term").each(function() {
+					 	 		if (e.data("num") == $(this).data("num")) {
+					 	 			el.animate({
+									    left: $(this).offset().left + "px",
+									    top: $(this).offset().top + "px"
+									  }, 1000);
+					 	 		}
+					 	 	};
+					 	 	
 					 	}
 					 } 
 				});
