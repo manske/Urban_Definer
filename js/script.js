@@ -261,11 +261,9 @@ $(function(){
 					 	 	var el = $(this);
 					 	 	$(".term").each(function() {
 					 	 		if (e.data("num") == $(this).data("num")) {
-					 	 			console.log($(this).offset().left);
-					 	 			console.log($(this).offset().top);
+					 	 			var move_me = $(this).offset().top - el.offset().top;
 					 	 			el.animate({
-									    left: $(this).offset().left + "px",
-									    top: $(this).offset().top + "px"
+									    top: +=move_me
 									  }, 1000);
 					 	 		}
 					 	 	});
