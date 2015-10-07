@@ -263,7 +263,7 @@ $(function(){
 					 	 		if (e.data("num") == $(this).data("num")) {
 					 	 			var move_me = $(this).offset().top - el.offset().top;
 					 	 			el.animate({
-									    top: +=move_me
+									    top: "+=move_me"
 									  }, 1000);
 					 	 		}
 					 	 	});
