@@ -258,7 +258,7 @@ $(function(){
 					 		$(this).css({"background-color" : "rgba(0, 102, 0, .5)"})
 					 	} else {
 					 	 	$(this).css({"background-color" : "rgba(153, 0, 0, .5)"});
-					 	 	var el = $('.answer-row[data-num=\"'+ $(this).data("num")  +''\"]');
+					 	 	var el = $('.answer-row[data-num=\"'+ $(this).data("num")  +'\"]');
 					 	 	$(this).animate({
 							    left: el.offset().left + "px",
 							    top: el.offset().top + "px"
