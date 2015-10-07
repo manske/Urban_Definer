@@ -268,7 +268,7 @@ $(function(){
 									    top: $(this).offset().top + "px"
 									  }, 1000);
 					 	 		}
-					 	 	};
+					 	 	});
 					 	 	
 					 	}
 					 } 
