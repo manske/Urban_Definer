@@ -183,6 +183,7 @@ header h1 {
 	color: #ccc;
 	font-family: 'bebas_neuebold', "Bebas Neue" , sans-serif;
 	font-size: 3em;
+	cursor: pointer;
 }
 
 #info-overlay .container {
