@@ -147,11 +147,11 @@ $(function(){
 	})
 
 
-	function game(new_game) {
+	function game(_new_game) {
 
 		var _chosenAll = [];
 
-		refresh();
+		if (_new_game) new_game();
 		outputTerms();
 
 		document.getElementById('current-score').innerHTML = "0";
@@ -277,6 +277,20 @@ $(function(){
 			$("#bravo").draggable({ disabled: false });  
 			$("#charlie").draggable({ disabled: false });  
 			$("#delta").draggable({ disabled: false }); 
+			$(".answer-row").children('div').each(function() {
+				$(this).css({
+					"top": "0px",
+					"left" : "0px",
+					"background-color" : "rgba(0,0,0,.5)"
+				});
+			});
+		}
+		
+		function new_game() {
+			$("#alfa").draggable("destroy");  
+			$("#bravo").draggable("destroy");  
+			$("#charlie").draggable("destroy");  
+			$("#delta").draggable("destroy"); 
 			$(".answer-row").children('div').each(function() {
 				$(this).css({
 					"top": "0px",
