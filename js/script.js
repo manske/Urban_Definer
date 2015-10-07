@@ -287,6 +287,8 @@ $(function(){
 		}
 		
 		function new_game() {
+			$("#next").unbind();
+			$("#click").unbind();
 			$("#alfa").draggable("destroy");  
 			$("#bravo").draggable("destroy");  
 			$("#charlie").draggable("destroy");  
