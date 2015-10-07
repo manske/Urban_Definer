@@ -262,6 +262,8 @@ $(function(){
 					 	 	$(".term").each(function() {
 					 	 		if (e.data("num") == $(this).data("num")) {
 					 	 			var move_me = $(this).offset().top - el.offset().top;
+					 	 			console.log(".term : " + $(this).offset().top);
+					 	 			console.log(".datarow : " + el.offset().top);
 					 	 			move_me =  parseInt(el.css('top')) + move_me + "px";
 					 	 			console.log(move_me);
 					 	 			el.animate({
