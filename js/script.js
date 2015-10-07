@@ -151,47 +151,47 @@ $(function(){
 
 		var _chosenAll = [];
 
-		if (_new_game) new_game();
+		if (_new_game) {
+			new_game()
+		} else {
+			$("#next").click(function() {
+				$(this).hide("fast");
+				refresh();
+				outputTerms();
+			});
+			$("#check").click(function() {
+				check_answers();
+			});
+			$("#bravo").draggable({ 
+			snap: ".snap-to", 
+			stop: function() {
+		  		check_pos();
+			     }
+			});
+			$("#alfa").draggable({ 
+				snap: ".snap-to", 
+				stop: function() {
+			  		check_pos();
+			     }
+			});
+			$("#charlie").draggable({ 
+				snap: ".snap-to", 
+				stop: function() {
+			  		check_pos();
+			     }
+			});
+			$("#delta").draggable({ 
+				snap: ".snap-to", 
+				stop: function() {
+			  		check_pos();
+			     }
+			});
+		}
+		
 		outputTerms();
 
 		document.getElementById('current-score').innerHTML = "0";
 		document.getElementById('out-of-total').innerHTML = "0";
-
-		$("#next").click(function() {
-			$(this).hide("fast");
-			refresh();
-			outputTerms();
-		});
-
-		$("#check").click(function() {
-			check_answers();
-		});
-
-
-		$("#bravo").draggable({ 
-			snap: ".snap-to", 
-			stop: function() {
-		  		check_pos();
-		     }
-		});
-		$("#alfa").draggable({ 
-			snap: ".snap-to", 
-			stop: function() {
-		  		check_pos();
-		     }
-		});
-		$("#charlie").draggable({ 
-			snap: ".snap-to", 
-			stop: function() {
-		  		check_pos();
-		     }
-		});
-		$("#delta").draggable({ 
-			snap: ".snap-to", 
-			stop: function() {
-		  		check_pos();
-		     }
-		});
 
 		function outputTerms() {
 
@@ -287,12 +287,6 @@ $(function(){
 		}
 		
 		function new_game() {
-			$("#next").unbind();
-			$("#click").unbind();
-			$("#alfa").draggable("destroy");  
-			$("#bravo").draggable("destroy");  
-			$("#charlie").draggable("destroy");  
-			$("#delta").draggable("destroy"); 
 			$(".answer-row").children('div').each(function() {
 				$(this).css({
 					"top": "0px",
