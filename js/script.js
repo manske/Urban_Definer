@@ -155,37 +155,46 @@ $(function(){
 			new_game()
 		} else {
 			$("#next").click(function() {
-				$(this).hide("fast");
 				refresh();
 				outputTerms();
 			});
+
 			$("#check").click(function() {
 				check_answers();
 			});
+
+			$("#see-answers").click(function() {
+				see_answers();
+			});
+
 			$("#bravo").draggable({ 
 			snap: ".snap-to", 
 			stop: function() {
 		  		check_pos();
 			     }
 			});
+
 			$("#alfa").draggable({ 
 				snap: ".snap-to", 
 				stop: function() {
 			  		check_pos();
 			     }
 			});
+
 			$("#charlie").draggable({ 
 				snap: ".snap-to", 
 				stop: function() {
 			  		check_pos();
 			     }
 			});
+
 			$("#delta").draggable({ 
 				snap: ".snap-to", 
 				stop: function() {
 			  		check_pos();
 			     }
 			});
+
 		}
 		
 		outputTerms();
@@ -258,6 +267,44 @@ $(function(){
 					 		$(this).css({"background-color" : "rgba(0, 102, 0, .5)"})
 					 	} else {
 					 	 	$(this).css({"background-color" : "rgba(153, 0, 0, .5)"});
+					 	 	/*var el = $(this);
+					 	 	$(".term").each(function() {
+					 	 		if (el.data("num") == $(this).data("num")) {
+					 	 			var move_me = $(this).offset().top - el.offset().top;
+					 	 			console.log(".term : " + $(this).offset().top + " " + $(this));
+					 	 			console.log(".answer : " + el.offset().top  + " " + el);
+					 	 			move_me =  parseInt(el.css('top')) + move_me + "px";
+					 	 			console.log(move_me);
+					 	 			el.animate({
+									    top: move_me
+									  }, 1000);
+					 	 		}
+					 	 	});*/
+					 	 	
+					 	}
+					 } 
+				});
+			});
+
+			var current_score = parseInt(document.getElementById('current-score').innerHTML) + num_correct;
+			var out_of_total = parseInt(document.getElementById('out-of-total').innerHTML) + 4;
+
+			document.getElementById('current-score').innerHTML = current_score.toString();
+			document.getElementById('out-of-total').innerHTML = out_of_total.toString();
+
+			$("#next").fadeIn("fast");
+			if (num_correct < 4) {
+				$("#see-answers").fadeIn("fast");
+			};
+			
+		}
+
+		function see_answers() {
+			$(".term").each(function() {		
+				var e = $(this);
+				$(".answer-row").children('div').each(function() {
+					 if (e.offset().top == $(this).offset().top) {
+					 	if (e.data("num") != $(this).data("num")) {
 					 	 	var el = $(this);
 					 	 	$(".term").each(function() {
 					 	 		if (el.data("num") == $(this).data("num")) {
@@ -276,17 +323,12 @@ $(function(){
 					 } 
 				});
 			});
-
-			var current_score = parseInt(document.getElementById('current-score').innerHTML) + num_correct;
-			var out_of_total = parseInt(document.getElementById('out-of-total').innerHTML) + 4;
-
-			document.getElementById('current-score').innerHTML = current_score.toString();
-			document.getElementById('out-of-total').innerHTML = out_of_total.toString();
-
-			$("#next").show("fast");
 		}
 
 		function refresh() {
+			$("#next").fadeOut("fast");
+			$("#check").fadeOut("fast");
+			$("#see-answers").fadeOut("fast");
 			$("#alfa").draggable({ disabled: false });  
 			$("#bravo").draggable({ disabled: false });  
 			$("#charlie").draggable({ disabled: false });  
@@ -301,6 +343,9 @@ $(function(){
 		}
 		
 		function new_game() {
+			$("#next").fadeOut("fast");
+			$("#check").fadeOut("fast");
+			$("#see-answers").fadeOut("fast");
 			$(".answer-row").children('div').each(function() {
 				$(this).css({
 					"top": "0px",

@@ -11,14 +11,14 @@
 
 }
 
+html {
+	min-height: 100vh;
+	min-width: 100vw;
+}
 
 body {
 	background-image: url(../images/back-ground.jpg);
 	background-size: cover;
-	background-repeat: no-repeat;
-	min-width: 100vw;
-	min-height: 100vh;
-	margin: 0;
 }
 
 header .wrap {
@@ -167,6 +167,19 @@ header h1 {
 	font-size: 3em;
 	font-family: 'bebas_neuebold', "Bebas Neue" , sans-serif;
 	color: #fff;
+	margin: 10px 0;
+	cursor: pointer;
+	transistion: color 1s ease;
+}
+
+#next-check p:hover {
+	color: rgba(255,255,255,.5);
+}
+
+#see-answers {
+	padding: 0 30px 10px 0;
+	border-bottom: 3px solid #fff;
+
 }
 
 #info-overlay {
@@ -209,6 +222,7 @@ header h1 {
 	font-size: 2em;
 	color: #ccc;
 	margin: 10px 0;
+
 }
 
 #info-overlay a {
