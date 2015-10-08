@@ -15,6 +15,10 @@
 body {
 	background-image: url(../images/back-ground.jpg);
 	background-size: cover;
+	background-repeat: no-repeat;
+	min-width: 100vw;
+	min-height: 100vh;
+	margin: 0;
 }
 
 header .wrap {
