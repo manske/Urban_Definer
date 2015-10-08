@@ -151,47 +151,47 @@ $(function(){
 
 		var _chosenAll = [];
 
-		if (_new_game) new_game();
+		if (_new_game) {
+			new_game()
+		} else {
+			$("#next").click(function() {
+				$(this).hide("fast");
+				refresh();
+				outputTerms();
+			});
+			$("#check").click(function() {
+				check_answers();
+			});
+			$("#bravo").draggable({ 
+			snap: ".snap-to", 
+			stop: function() {
+		  		check_pos();
+			     }
+			});
+			$("#alfa").draggable({ 
+				snap: ".snap-to", 
+				stop: function() {
+			  		check_pos();
+			     }
+			});
+			$("#charlie").draggable({ 
+				snap: ".snap-to", 
+				stop: function() {
+			  		check_pos();
+			     }
+			});
+			$("#delta").draggable({ 
+				snap: ".snap-to", 
+				stop: function() {
+			  		check_pos();
+			     }
+			});
+		}
+		
 		outputTerms();
 
 		document.getElementById('current-score').innerHTML = "0";
 		document.getElementById('out-of-total').innerHTML = "0";
-
-		$("#next").click(function() {
-			$(this).hide("fast");
-			refresh();
-			outputTerms();
-		});
-
-		$("#check").click(function() {
-			check_answers();
-		});
-
-
-		$("#bravo").draggable({ 
-			snap: ".snap-to", 
-			stop: function() {
-		  		check_pos();
-		     }
-		});
-		$("#alfa").draggable({ 
-			snap: ".snap-to", 
-			stop: function() {
-		  		check_pos();
-		     }
-		});
-		$("#charlie").draggable({ 
-			snap: ".snap-to", 
-			stop: function() {
-		  		check_pos();
-		     }
-		});
-		$("#delta").draggable({ 
-			snap: ".snap-to", 
-			stop: function() {
-		  		check_pos();
-		     }
-		});
 
 		function outputTerms() {
 
@@ -257,7 +257,21 @@ $(function(){
 					 		num_correct++;
 					 		$(this).css({"background-color" : "rgba(0, 102, 0, .5)"})
 					 	} else {
-					 	 	$(this).css({"background-color" : "rgba(153, 0, 0, .5)"})
+					 	 	$(this).css({"background-color" : "rgba(153, 0, 0, .5)"});
+					 	 	var el = $(this);
+					 	 	$(".term").each(function() {
+					 	 		if (el.data("num") == $(this).data("num")) {
+					 	 			var move_me = $(this).offset().top - el.offset().top;
+					 	 			console.log(".term : " + $(this).offset().top + " " + $(this));
+					 	 			console.log(".answer : " + el.offset().top  + " " + el);
+					 	 			move_me =  parseInt(el.css('top')) + move_me + "px";
+					 	 			console.log(move_me);
+					 	 			el.animate({
+									    top: move_me
+									  }, 1000);
+					 	 		}
+					 	 	});
+					 	 	
 					 	}
 					 } 
 				});
@@ -287,12 +301,6 @@ $(function(){
 		}
 		
 		function new_game() {
-			$("#next").unbind();
-			$("#click").unbind();
-			$("#alfa").draggable("destroy");  
-			$("#bravo").draggable("destroy");  
-			$("#charlie").draggable("destroy");  
-			$("#delta").draggable("destroy"); 
 			$(".answer-row").children('div').each(function() {
 				$(this).css({
 					"top": "0px",
