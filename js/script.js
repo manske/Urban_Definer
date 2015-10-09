@@ -3,7 +3,76 @@ $(function(){
 
 
 	var _data = [
-		
+		{
+			term: 'Trap Queen',
+			def: 'A female, who\'s loyal to her boyfriend, and is intelligent. She takes no shit from anyone and rides for her man.',
+			used: 0
+		},
+		{
+			term: 'Butter Face',
+			def: 'A girl who is hot, except for her (but her, butter) face.',
+			used: 0
+		},
+		{
+			term: 'Pornocchio',
+			def: 'A person who embellishes their sexcapades to sound cooler.',
+			used: 0
+		},
+		{
+			term: 'Eyeolating',
+			def: 'When you're checking out a girl (or guy) so vigorously that you violate them.',
+			used: 0
+		},
+		{
+			term: 'Ratchet',
+			def: 'A diva, mostly from urban cities and ghettos, that has reason to believe she is every mans eye candy. Unfortunately, she\'s wrong.',
+			used: 0
+		},
+		{
+			term: 'Maintenance Poop',
+			def: 'The act of visiting the bathroom with the intention to only urinate, but instead relieve a little poop.',
+			used: 0
+		},
+		{
+			term: 'Scativism',
+			def: 'Shitting on peoples property as a form of protest.',
+			used: 0
+		},
+		{
+			term: 'Urethra Franklin',
+			def: 'Any sexual act involving penetration/stimulation of the urethra',
+			used: 0
+		},
+		{
+			term: 'Shit Ticket',
+			def: '(n.) a single section of bathroom tissue.',
+			used: 0
+		},
+		{
+			term: 'Trend Bomber',
+			def: 'When someone tries to become apart of a trend that they do not belong in. Posing to apart of a cultural trend that they have no business being apart of.',
+			used: 0
+		},
+		{
+			term: 'Alltheist',
+			def: 'A person who tries to claim ties to every religion out of fear of picking the "wrong" one.',
+			used: 0
+		},
+		{
+			term: 'Crash Your Squad',
+			def: 'When someone is new, or hasn\'t found their group yet, a group lets them hang with them until they make friends.',
+			used: 0
+		},
+		{
+			term: 'Lactcident',
+			def: 'Accidental explosive diarrhea caused by consuming a dairy product by a lactose intolerant person.',
+			used: 0
+		},
+		{
+			term: 'Jean Jam',
+			def: 'When jeans are way too tight on your junk. Limits mobility, decreases circulation, and potentially lowers sperm count.',
+			used: 0
+		},
 		{
 			term: 'Truffle Butter',
 			def: 'The fastest route to a urinary tract infection.',
