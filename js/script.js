@@ -20,7 +20,7 @@ $(function(){
 		},
 		{
 			term: 'Eyeolating',
-			def: 'When you're checking out a girl (or guy) so vigorously that you violate them.',
+			def: 'When you\'re checking out a girl (or guy) so vigorously that you violate them.',
 			used: 0
 		},
 		{
